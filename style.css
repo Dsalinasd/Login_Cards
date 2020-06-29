@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400&display=swap");
+
+:root {
+    /* Fuentes */
+    --main-font-family: "Work Sans", sans-serif;
+    --secondary-font-family: "Lato", sans-serif;
+    --main-font-color: #333;
+    --secondary-font-color: #fff;
+
+    /* Tamaños */
+    --main-font-size: 14px;
+
+    --sx: 0.25rem;
+    --s: 0.5rem;
+    --m: 0.75rem;
+    --l: 1rem;
+    --xl: 1.5rem;
+    --xxl: 2rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("images/bg_index.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 20%;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+}
+
+/* Saludo */
+.contenedor_saludo,
+.contenedor_frase {
+    width: 65%;
+    position: relative;
+    margin: auto;
+}
+
+.saludo_titulo {
+    font-family: var(--main-font-family);
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+}
+
+.saludo_texto {
+    font-family: var(--secondary-font-family);
+    font-size: 1.2rem;
+    color: var(--secondary-font-color);
+}
+
+/* Login */
+
+.marco {
+    width: 400px;
+    height: 230px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+}
+
+.contenedor_principal {
+    position: relative;
+    top: -20px;
+    width: 375px;
+    height: 210px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.icon_container {
+    height: 100px;
+    position: relative;
+}
+
+.icon_container span {
+    padding-left: 7px;
+}
+
+.icon_login {
+    position: absolute !important;
+    top: -15px;
+    font-size: 40px;
+    color: #333;
+    /* box-shadow: 0 0px 15px rgba(0,0,0, 0.3); */
+}
+
+.formulario_login {
+    width: 100%;
+    height: 230%;
+}
+
+p {
+    position: absolute;
+    top: -4px;
+    left: 50px;
+    font-size: 22px;
+    color: #333;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.btn {
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+}
+
+footer {
+    width: 100%;
+    height: 35px;
+    position: fixed;
+    bottom: 0px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+/* Animaciones */
+.atenuar {
+    animation: atenuar 1s;
+}
+
+@keyframes atenuar {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
