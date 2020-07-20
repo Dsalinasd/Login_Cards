@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url("images/bg_index.jpg");
+    background-image: url("../images/bg_index.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 20%;
