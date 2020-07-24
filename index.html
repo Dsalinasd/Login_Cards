@@ -30,9 +30,9 @@
                             <p class="text-center">Ingreso Clientes</p>
                             <div class="form-group mt-4">
                                 <label for="rut">Rut</label>
-                                <input type="text" id="rut" name="rut" class="form-control">
+                                <input type="text" id="rut_input" name="rut_input" class="form-control">
                                 <label for="pass">Contraseña</label>
-                                <input type="text" id="pass" name="pass" class="form-control">
+                                <input type="password" id="pass" name="pass" class="form-control">
                             </div>
                             <div class="contenedor-btn d-flex justify-content-center">
                                 <button class="btn btn-primary">Ingresar</button>
@@ -49,9 +49,8 @@
                         <div class="formulario_login d-flex flex-column justify-content-between pt-2 pl-4 p-2 pr-4 ">
                             <p class="text-center">Ingreso por Contrato</p>
                             <div class="form-group mt-4">
-                                <label for="rut">Contrato</label>
-                                <input type="text" id="rut" name="rut" class="form-control">
-
+                                <label for="contrato">Contrato</label>
+                                <input type="text" id="contrato" name="contrato" class="form-control">
                             </div>
                             <div class="contenedor-btn d-flex justify-content-center">
                                 <button class="btn btn-warning">Ingresar</button>
@@ -59,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -74,24 +72,39 @@
     </footer>
 
     <!-- Librerias Integradas ./node_modules -->
-    <!-- Bootstap -->
-    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
-    
-    <!-- Sweetalert2 -->
-    <script src="./vendor/sweetalert2/sweetalert2.all.min.js"></script>
-    
     <!-- Jquery -->
     <script src="./vendor/jquery/jquery.slim.min.js"></script>
-    
+
+    <!-- Bootstap -->
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Sweetalert2 -->
+    <script src="./vendor/sweetalert2/sweetalert2.all.min.js"></script>
+
     <!-- Funciones y scripts -->
+    <script src="vendor/rutjs/rut.js"></script>
     <script>
+        $("#rut_input").focusout(function () {
+            if ($("#rut_input").val()!=''){
+                let rut = new Rut($("#rut_input").val());
+                if (rut.isValid) {
+                    $("#rut_input").val(rut.getNiceRut());
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Rut No Válido',
+                    })
+                    $("#rut_input").val('');
+                }
+            }
+        })
+
         $("#login_cliente").hover(function () {
             $("#login_contrato").addClass('atenuar');
         });
 
         $("#login_cliente").mouseleave(function () {
             $("#login_contrato").removeClass('atenuar');
-
         });
     </script>
 </body>
