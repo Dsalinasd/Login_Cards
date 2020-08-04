@@ -25,7 +25,7 @@
             <div id="login_cliente" class="marco d-flex align-items-center justify-content-center">
                 <div class="contenedor_principal rounded ">
                     <div class="icon_container">
-                        <span class="material-icons icon_login">verified_user</span>
+                        <span style="color:red" class="material-icons icon_login">verified_user</span>
                         <div class="formulario_login d-flex flex-column justify-content-between pt-2 pl-4 p-2 pr-4">
                             <p class="text-center">Ingreso Clientes</p>
                             <div class="form-group mt-4">
@@ -45,7 +45,7 @@
             <div id="login_contrato" class="ml-5 marco d-flex align-items-center justify-content-center">
                 <div class="contenedor_principal rounded ">
                     <div class="icon_container">
-                        <span class="material-icons icon_login">verified</span>
+                        <span style="color:red" class="material-icons icon_login">verified</span>
                         <div class="formulario_login d-flex flex-column justify-content-between pt-2 pl-4 p-2 pr-4 ">
                             <p class="text-center">Ingreso por Contrato</p>
                             <div class="form-group mt-4">
@@ -53,7 +53,7 @@
                                 <input type="text" id="contrato" name="contrato" class="form-control">
                             </div>
                             <div class="contenedor-btn d-flex justify-content-center">
-                                <button class="btn btn-warning">Ingresar</button>
+                                <button id="btn_contrato" class="btn btn-warning">Ingresar</button>
                             </div>
                         </div>
                     </div>
@@ -97,6 +97,10 @@
                     $("#rut_input").val('');
                 }
             }
+        });
+
+        $("#btn_contrato").click(function(){
+            location.href('tabla.html');
         })
 
         $("#login_cliente").hover(function () {

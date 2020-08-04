@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+
+    <!-- Bootstrap Css  -->
+    <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css">
+    <!-- Material Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Simple Hint Tooltip -->
+    <link rel="stylesheet" href="./vendor/simple_hint/simple-hint.css">
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Col1</th>
+                <th>Col2</th>
+                <th>Col3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td class="d-flex">
+                    
+                    <input id="t1" type="text" data-val="Valor_1" class="dato form-control" value="Valor_1" onblur="desactivar('1')" disabled>
+                    <div id="e1" class="edit" data-val="1"><span class="material-icons">create</span></div>
+                    <div id="s1" class="save" data-val="1"><span class="material-icons">save</span></div>
+                
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="d-flex">
+                    <input id="t2" type="text" data-val="Valor_2" class="dato form-control" value="Valor_2" onblur="desactivar('2')" disabled>
+                    <div id="e2" class="edit" data-val="2"><span class="material-icons">create</span></div>
+                    <div id="s2" class="save" data-val="2"><span class="material-icons">save</span></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="d-flex">
+                    <input id="t3" type="text" data-val="Valor_3" class="dato form-control" value="Valor_3" onblur="desactivar('3')" disabled>
+                    <div id="e3" class="edit" data-val="3"><span class="material-icons">create</span></div>
+                    <div id="s3" class="save" data-val="3"><span class="material-icons">save</span></div>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Librerias Integradas ./node_modules -->
+    <!-- Jquery -->
+    <script src="./vendor/jquery/jquery.slim.min.js"></script>
+
+    <!-- Bootstap -->
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Sweetalert2 -->
+    <script src="./vendor/sweetalert2/sweetalert2.all.min.js"></script>
+
+    <script>
+        $(".edit").click(function(){
+            let op = $("#"+this.id).data('val');
+            $("#t"+op).removeAttr("disabled");
+            $("#t"+op).focus();
+            $("#e"+op).css('display','none')
+            $("#s"+op).css('display','block')
+        });
+
+        function desactivar(op){
+            let texto_original = $("#t"+op).data('val');
+            let texto_nuevo = $("#t"+op).val();
+
+            if(texto_original != texto_nuevo){
+                alert('Desea Modificar');
+                $("#t"+op).val(texto_original)
+            } else {
+            }
+            $("#t"+op).attr("disabled","disabled");
+            $('#e'+op).css('display','block')
+            $("#s"+op).css('display','none')
+        }
+
+    </script>
+
+</body>
+</html>
