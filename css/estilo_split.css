@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body{
+    margin:0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    background: #000;
+}
+
+section .screen {
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden ;
+    transition: 1s;
+}
+
+section:hover .screen {
+    opacity: 0.1;
+}
+
+section .screen:hover {
+    flex-grow: 5;
+    opacity: 1;
+}
+
+section .screen:nth-child(1) {
+    background: url('../images/2598.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+section .screen:nth-child(2) {
+    background: url('../images/2607.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+section .screen:nth-child(3) {
+    background: url('../images/2612.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+section .screen .content {
+    position: absolute;
+    bottom: 20px;
+    width: 350px;
+    height: auto;
+    background-color: rgba(255,255,255, 1);
+    padding: 10px;
+    font-size: 12px;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: 0.5s;
+    text-align: justify;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+section .screen:hover .content {
+    transform:translateX(0%);
+    transition-delay: 1s; 
+    text-transform: uppercase;
+    color:#ed363a;
+}
+section .screen .content h2{
+    margin: 0;
+    padding: 0;
+}
+
+
